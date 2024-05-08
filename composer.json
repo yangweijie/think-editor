@@ -1,0 +1,32 @@
+{
+    "name": "yangweijie/think-editor",
+    "type": "library",
+    "require": {
+        "topthink/framework": "^6.0 | ^6.1 |^8.0"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "yangweijie\\editor\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "yangweijie",
+            "email": "917647288@qq.com"
+        }
+    ],
+    "extra": {
+        "think": {
+            "config": {
+                "editor": "config/config.php"
+            }
+        }
+    },
+    "scripts":{
+        "post-autoload-dump": [
+            "yangweijie\\editor\\Install::config"
+        ]
+    },
+    "minimum-stability": "dev"
+}
