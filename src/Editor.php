@@ -84,4 +84,15 @@ class Editor
 
         return [];
     }
+
+    public static function wslToRealWin($filePath)
+    {
+        if (self::isWin() && stripos($filePath, '/mnt') !== false) {
+            $filePath = str_replace('/mnt/', '', $filePath);
+            $filePathArr = explode('/', $filePath);
+            $filePathArr[0] .= ':';
+            $filePath = implode('/', $filePathArr);
+        }
+        return $filePath;
+    }
 }
